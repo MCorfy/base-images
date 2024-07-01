@@ -13,101 +13,101 @@ sync:
   #      yq -r e '.sync[] | select(.sourceSignature != null) | .source + " " + .sourceSignature.issuerRegExp + " " + .sourceSignature.subjectRegExp' -o json < ./config.yaml \
   #         | xargs -n 1 -l bash -c 'cosign verify -o text --certificate-identity-regexp "$2" --certificate-oidc-issuer-regexp "$1" "$0"'
   - source: docker.io/library/alpine:3.18@sha256:02bb6f428431fbc2809c5d1b41eab5a68350194fb508869a33cb1af4444c9b11
-    destination: ghcr.io/geonet/base-images/alpine:3.18 # latest alpine
+    destination: ghcr.io/MCorfy/base-images/alpine:3.18 # latest alpine
   - source: docker.io/redhat/ubi8:8.9@sha256:e5d89fb9c9b6592d0d5e576c53021598cde831b20213207ecd896049c4b21c08
-    destination: ghcr.io/geonet/base-images/ubi8:8.9
+    destination: ghcr.io/MCorfy/base-images/ubi8:8.9
   - source: docker.io/redhat/ubi8-minimal:8.9@sha256:f28a083503f91d97fd3ac2ec24d67c0fa705c086c4c01f31c33567ebab1dfcb8
-    destination: ghcr.io/geonet/base-images/ubi8-minimal:8.9
+    destination: ghcr.io/MCorfy/base-images/ubi8-minimal:8.9
   - source: docker.io/datadog/agent:7.51.0@sha256:fa2e2347bb66513515074e825ff749f950ab6051f61b889ba3734f328bf86ec6
-    destination: ghcr.io/geonet/base-images/datadog/agent:7.51.0
+    destination: ghcr.io/MCorfy/base-images/datadog/agent:7.51.0
   - source: docker.io/almalinux:8.9@sha256:286bebaacc46c498394238b7a27b99192f829fd94460b67f8de2cc23696935de
-    destination: ghcr.io/geonet/base-images/almalinux:8.9
+    destination: ghcr.io/MCorfy/base-images/almalinux:8.9
   - source: docker.io/datadog/agent:7.51.0@sha256:fa2e2347bb66513515074e825ff749f950ab6051f61b889ba3734f328bf86ec6
     destination: 862640294325.dkr.ecr.ap-southeast-2.amazonaws.com/datadog-agent:7.51.0
   - source: docker.io/library/debian:bookworm-slim@sha256:d8f9d38c21495b04d1cca99805fbb383856e19794265684019bf193c3b7d67f9
-    destination: ghcr.io/geonet/base-images/debian:bookworm-slim
+    destination: ghcr.io/MCorfy/base-images/debian:bookworm-slim
   - source: docker.io/hadolint/hadolint:v2.12.0-alpine@sha256:3c206a451cec6d486367e758645269fd7d696c5ccb6ff59d8b03b0e45268a199
-    destination: ghcr.io/geonet/base-images/hadolint/hadolint:v2.12.0-alpine
+    destination: ghcr.io/MCorfy/base-images/hadolint/hadolint:v2.12.0-alpine
   - source: docker.io/library/node:16.17.1-alpine@sha256:4d68856f48be7c73cd83ba8af3b6bae98f4679e14d1ff49e164625ae8831533a # older node
-    destination: ghcr.io/geonet/base-images/node:16.17.1-alpine
+    destination: ghcr.io/MCorfy/base-images/node:16.17.1-alpine
   - source: docker.io/library/node:20.3-alpine3.18@sha256:30d5045fa5026abaed7439b62d51f73ac3efd1009496271d4c85fd83bb20144e # latest node
-    destination: ghcr.io/geonet/base-images/node:20.3-alpine3.18
+    destination: ghcr.io/MCorfy/base-images/node:20.3-alpine3.18
   - source: docker.io/library/python:3.11.4-bullseye@sha256:e76a365d3f3b37ad4cf4bae474a063883461b01e07e2f51cd7d9597fd455ee38
-    destination: ghcr.io/geonet/base-images/python:3.11.4-bullseye
+    destination: ghcr.io/MCorfy/base-images/python:3.11.4-bullseye
   - source: docker.io/library/python:3.12.2-bullseye@sha256:632aa502e9478bac490956b49b0184c300b0448f74bd7cb3245467f4af90cdd3
-    destination: ghcr.io/geonet/base-images/python:3.12.2-bullseye
+    destination: ghcr.io/MCorfy/base-images/python:3.12.2-bullseye
   - source: docker.io/library/python:3.12.2-alpine3.19@sha256:849ed6079c9f797ca9c1b7d6aea1c00aea3ac35110cbd0d6003f15950017ea8d
-    destination: ghcr.io/geonet/base-images/python:3.12.2-alpine3.19
+    destination: ghcr.io/MCorfy/base-images/python:3.12.2-alpine3.19
   - source: docker.io/library/python:3.11.9-alpine3.19@sha256:0b5ed25d3cc27cd35c7b0352bac8ef2ebc8dd3da72a0c03caaf4eb15d9ec827a
-    destination: ghcr.io/geonet/base-images/python:3.11.9-alpine3.19
+    destination: ghcr.io/MCorfy/base-images/python:3.11.9-alpine3.19
   - source: docker.io/library/python:3.11.4-alpine3.18@sha256:995c7fcdf9a10e0e1a4555861dac63436b456822a167f07b6599d4f105de6fa0
-    destination: ghcr.io/geonet/base-images/python:3.11.4-alpine3.18
+    destination: ghcr.io/MCorfy/base-images/python:3.11.4-alpine3.18
   - source: docker.io/golang:1.21.8-alpine3.18@sha256:860939eeb59ad790aa592fdd6d09829845b4e04ee5a59e4b77d5bbca41d949c7
-    destination: ghcr.io/geonet/base-images/go:1.21 # until ko has been fully adopted
+    destination: ghcr.io/MCorfy/base-images/go:1.21 # until ko has been fully adopted
   - source: docker.io/vmware/govc:v0.37.0@sha256:cb81de51e4255a6fb980c33b7b1e04832f2640b9010d51720e223f580efc4949
-    destination: ghcr.io/geonet/base-images/govc:v0.37.0
+    destination: ghcr.io/MCorfy/base-images/govc:v0.37.0
   - source: cgr.dev/chainguard/static:latest@sha256:da9822ad6f973e40e24e75133b08ae874900766873ecd03e58f7f630ccea898c
     sourceSignature:
       issuerRegExp: https://token.actions.githubusercontent.com
       subjectRegExp: https://github.com/chainguard-images/images/.github/workflows/release.yaml@refs/heads/main
-    destination: ghcr.io/geonet/base-images/static:latest
+    destination: ghcr.io/MCorfy/base-images/static:latest
   - source: cgr.dev/chainguard/nginx:latest@sha256:f705448eb5a9939454a5bfe1a2b6a8afe4da18d8f7191ef62b883200baa46054
     sourceSignature:
       issuerRegExp: https://token.actions.githubusercontent.com
       subjectRegExp: https://github.com/chainguard-images/images/.github/workflows/release.yaml@refs/heads/main
-    destination: ghcr.io/geonet/base-images/nginx:latest
+    destination: ghcr.io/MCorfy/base-images/nginx:latest
   - source: cgr.dev/chainguard/node:20@sha256:38dc35af8d4bd8f59c1d8b88999e7dee9746dcee0f375848fb9701f3b61564e5 # latest node
     sourceSignature:
       issuerRegExp: https://token.actions.githubusercontent.com
       subjectRegExp: https://github.com/chainguard-images/images/.github/workflows/release.yaml@refs/heads/main
-    destination: ghcr.io/geonet/base-images/node:20
-  - source: ghcr.io/geonet/base-images/mkdocs_plus:latest@sha256:d54c497b4ec5cce0c41b84e6afe5e4250c0b6ba499832ee977137f0f5e9c8a77
+    destination: ghcr.io/MCorfy/base-images/node:20
+  - source: ghcr.io/MCorfy/base-images/mkdocs_plus:latest@sha256:d54c497b4ec5cce0c41b84e6afe5e4250c0b6ba499832ee977137f0f5e9c8a77
     sourceSignature:
       issuerRegExp: https://token.actions.githubusercontent.com
       # match signature before and after adopting reusable workflow
       # as the identity of the subject changes depending on which workflow it's signed with
       subjectRegExp: https://github.com/GeoNet/(base-images/.github/workflows/build.yml@refs/heads/main|Actions/.github/workflows/reusable-docker-build.yml@refs/heads/main)
-    destination: ghcr.io/geonet/base-images/mkdocs_plus:2023-06-14
+    destination: ghcr.io/MCorfy/base-images/mkdocs_plus:2023-06-14
   - source: ghcr.io/siderolabs/conform:v0.1.0-alpha.27@sha256:60e5c3cac83104077aff44a86518972f92cffb48d06c06486fb1f2711d4eb559
-    destination: ghcr.io/geonet/base-images/siderolabs-conform:v0.1.0-alpha.27
+    destination: ghcr.io/MCorfy/base-images/siderolabs-conform:v0.1.0-alpha.27
   - source: quay.io/fedora/fedora:38@sha256:6349d2df6b4322c5690df1bb7743c45c356e20471dda69f27218cd9ba4a6c3c7 # 38 for 2024-01-28
-    destination: ghcr.io/geonet/base-images/fedora:38
+    destination: ghcr.io/MCorfy/base-images/fedora:38
     auto-update-mutable-tag-digest: true
   - source: quay.io/fedora/fedora:39@sha256:77bf423622b55ada0bca28ce93acdb84fae0297241c6c22d1d421c15ed8ea206 # 39 for 2024-07-01
-    destination: ghcr.io/geonet/base-images/fedora:39
+    destination: ghcr.io/MCorfy/base-images/fedora:39
     auto-update-mutable-tag-digest: true
   - source: quay.io/fedora/fedora:40@sha256:a4ac7cadd63a95f37bb86690c1a3486268095432fec7178ca340b35139cddd47 # 40 for 2024-07-01
-    destination: ghcr.io/geonet/base-images/fedora:40
+    destination: ghcr.io/MCorfy/base-images/fedora:40
     auto-update-mutable-tag-digest: true
   - source: quay.io/fedora/fedora:39-aarch64@sha256:91ae490d6968148f8340ed49c067037328d81f5d1a13c6ca79d42216879fa3d2 # 39-aarch64 for 2024-07-01
-    destination: ghcr.io/geonet/base-images/fedora:39-aarch64
+    destination: ghcr.io/MCorfy/base-images/fedora:39-aarch64
     auto-update-mutable-tag-digest: true
   - source: quay.io/fedora/fedora:40-aarch64@sha256:ab5f0f1b652223146a3b038d74972e27418097fb7dbefb478f87cc425ae7d97e # 40-aarch64 for 2024-07-01
-    destination: ghcr.io/geonet/base-images/fedora:40-aarch64
+    destination: ghcr.io/MCorfy/base-images/fedora:40-aarch64
     auto-update-mutable-tag-digest: true
   - source: quay.io/fedora/fedora-coreos:stable@sha256:a9fed7bc675005c838acb91febcb93741bd81af837fb58347a13d7bbcdd90b30 # stable for 2024-06-21
-    destination: ghcr.io/geonet/base-images/fedora-coreos:stable
+    destination: ghcr.io/MCorfy/base-images/fedora-coreos:stable
     auto-update-mutable-tag-digest: true
   - source: quay.io/centos/centos:centos7@sha256:e4ca2ed0202e76be184e75fb26d14bf974193579039d5573fb2348664deef76e # 7 for 2023-09-21
-    destination: ghcr.io/geonet/base-images/centos:centos7
+    destination: ghcr.io/MCorfy/base-images/centos:centos7
     auto-update-mutable-tag-digest: true
   - source: quay.io/centos/centos:stream8@sha256:20da069d4f8126c4517ee563e6e723d4cbe79ff62f6c4597f753478af91a09a3 # stream8 for 2024-06-05
-    destination: ghcr.io/geonet/base-images/centos:stream8
+    destination: ghcr.io/MCorfy/base-images/centos:stream8
     auto-update-mutable-tag-digest: true
   - source: quay.io/centos/centos:stream9@sha256:8edcfab3ba262a926f3f911d5743bd894dce857fc80f74b615b68da3d05f4bde # stream9 for 2024-06-25
-    destination: ghcr.io/geonet/base-images/centos:stream9
+    destination: ghcr.io/MCorfy/base-images/centos:stream9
     auto-update-mutable-tag-digest: true
   - source: cgr.dev/chainguard/curl:8.1.2@sha256:73992422b3e634c520483bb0aeda22c405d4701ccf5c2294c71d7f67373301cb
     sourceSignature:
       issuerRegExp: https://token.actions.githubusercontent.com
       subjectRegExp: https://github.com/chainguard-images/images/.github/workflows/release.yaml@refs/heads/main
-    destination: ghcr.io/geonet/base-images/curl:8.1.2
+    destination: ghcr.io/MCorfy/base-images/curl:8.1.2
   - source: ghcr.io/zaproxy/zaproxy:20240402-stable@sha256:3280adc730131f1f4460ab226b0f85e3e9ab3301ef5a7030f745ac4dd6b6ff87
-    destination: ghcr.io/geonet/base-images/zaproxy/zaproxy:20240402-stable
+    destination: ghcr.io/MCorfy/base-images/zaproxy/zaproxy:20240402-stable
   - source: docker.io/koalaman/shellcheck-alpine:v0.9.0@sha256:e19ed93c22423970d56568e171b4512c9244fc75dd9114045016b4a0073ac4b7
-    destination: ghcr.io/geonet/base-images/shellcheck:v0.9.0
+    destination: ghcr.io/MCorfy/base-images/shellcheck:v0.9.0
   - source: docker.io/tonistiigi/binfmt:latest@sha256:66e11bea77a5ea9d6f0fe79b57cd2b189b5d15b93a2bdb925be22949232e4e55
-    destination: ghcr.io/geonet/base-images/binfmt:latest
+    destination: ghcr.io/MCorfy/base-images/binfmt:latest
     auto-update-mutable-tag-digest: true
 build:
   # NOTES
@@ -115,39 +115,39 @@ build:
   # - image.yaml for apko based build
   # - Dockerfile for Docker based build
   # - structure like ./images/IMAGE_NAME/...
-  # - images are pushed to ghcr.io/geonet/base-images/IMAGE_NAME
+  # - images are pushed to ghcr.io/MCorfy/base-images/IMAGE_NAME
   - source: ./images/mkdocs_plus/Dockerfile
-    destination: ghcr.io/geonet/base-images/mkdocs_plus:latest
+    destination: ghcr.io/MCorfy/base-images/mkdocs_plus:latest
   - source: ./images/mkdocs_material/Dockerfile
-    destination: ghcr.io/geonet/base-images/mkdocs:v1.6.0
+    destination: ghcr.io/MCorfy/base-images/mkdocs:v1.6.0
   - source: ./images/git/image.yaml
-    destination: ghcr.io/geonet/base-images/git:latest
+    destination: ghcr.io/MCorfy/base-images/git:latest
   - source: ./images/git-ssh/image.yaml
-    destination: ghcr.io/geonet/base-images/git-ssh:latest
+    destination: ghcr.io/MCorfy/base-images/git-ssh:latest
   - source: ./images/alpine-iputils/image.yaml
-    destination: ghcr.io/geonet/base-images/alpine-iputils:3.18
+    destination: ghcr.io/MCorfy/base-images/alpine-iputils:3.18
   - source: ./images/alpine-xslt/image.yaml
-    destination: ghcr.io/geonet/base-images/alpine-xslt:3.18
+    destination: ghcr.io/MCorfy/base-images/alpine-xslt:3.18
   - source: ./images/alpine-gdal/image.yaml
-    destination: ghcr.io/geonet/base-images/alpine-gdal:3.18
+    destination: ghcr.io/MCorfy/base-images/alpine-gdal:3.18
   - source: ./images/texlive/image.yaml
-    destination: ghcr.io/geonet/base-images/texlive:latest
+    destination: ghcr.io/MCorfy/base-images/texlive:latest
   - source: ./images/python-arcgis/Dockerfile
-    destination: ghcr.io/geonet/base-images/python-arcgis:latest
+    destination: ghcr.io/MCorfy/base-images/python-arcgis:latest
     buildOnMainOnly: true
   - source: ./images/rpmbuild-centos7/Dockerfile
-    destination: ghcr.io/geonet/base-images/rpmbuild-centos7:latest
+    destination: ghcr.io/MCorfy/base-images/rpmbuild-centos7:latest
     buildOnMainOnly: true
   - source: ./images/rpmbuild-almalinux8/Dockerfile
-    destination: ghcr.io/geonet/base-images/rpmbuild-almalinux8:latest
+    destination: ghcr.io/MCorfy/base-images/rpmbuild-almalinux8:latest
     buildOnMainOnly: true
   - source: ./images/rpmbuild-centos-stream9/Dockerfile
-    destination: ghcr.io/geonet/base-images/rpmbuild-centos-stream9:latest
+    destination: ghcr.io/MCorfy/base-images/rpmbuild-centos-stream9:latest
     buildOnMainOnly: true
   - source: ./images/rpmbuild-fedora/Dockerfile
-    destination: ghcr.io/geonet/base-images/rpmbuild-fedora:latest
+    destination: ghcr.io/MCorfy/base-images/rpmbuild-fedora:latest
     buildOnMainOnly: true
   - source: ./images/alpine-nginx-rtmp-stream/Dockerfile
-    destination: ghcr.io/geonet/base-images/nginx-rtmp:v1.2.2
+    destination: ghcr.io/MCorfy/base-images/nginx-rtmp:v1.2.2
   - source: ./images/alpine-ffmpeg/Dockerfile
-    destination: ghcr.io/geonet/base-images/alpine-ffmpeg:latest
+    destination: ghcr.io/MCorfy/base-images/alpine-ffmpeg:latest
