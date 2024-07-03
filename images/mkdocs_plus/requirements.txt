@@ -11,7 +11,7 @@ GitPython==3.1.37
 html5lib==1.1
 htmlmin==0.1.12
 Jinja2==3.0.3
-jsmin==3.0.0
+jsmin==3.0.1
 livereload==2.6.3
 Markdown==3.3.6
 MarkupSafe==2.0.1
